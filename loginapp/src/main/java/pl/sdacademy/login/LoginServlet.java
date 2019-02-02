@@ -1,4 +1,4 @@
-package pl.sdacademy;
+package pl.sdacademy.login;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -28,4 +28,6 @@ public class LoginServlet extends HttpServlet {
         session.setAttribute("user", user);
         response.sendRedirect("main");
     }
+
+
 }

@@ -1,4 +1,4 @@
-package pl.sdacademy;
+package pl.sdacademy.main;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,11 +15,6 @@ public class MainServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        HttpSession session = request.getSession(false);
-        if(session == null){
-            response.sendRedirect("login.html");
-            return;
-        }
         String user = (String) request.getSession().getAttribute("user");
         response.getWriter().println("Hello " + user);
 
