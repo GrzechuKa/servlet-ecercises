@@ -1,5 +1,6 @@
 package pl.sdacademy.registration;
 
+import javax.inject.Inject;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -10,17 +11,18 @@ import java.io.IOException;
 @WebServlet(name = "RegisterController", value = "/newUser")
 public class RegisterController extends HttpServlet {
 
+    @Inject
+    private UserService userService;
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         request.getRequestDispatcher("WEB-INF/userCreate.jsp").forward(request, response);
-
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
-
     }
+
 }

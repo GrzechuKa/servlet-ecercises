@@ -1,6 +1,6 @@
 package pl.sdacademy.registration;
 
-import javax.ejb.Singleton;
+import javax.inject.Singleton;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
@@ -10,7 +10,7 @@ import java.util.Collection;
 @Singleton
 public class UserDao {
 
-    @PersistenceContext(unitName = "testPersistanceUnit")
+    @PersistenceContext(unitName = "testPersistenceUnit")
     private EntityManager entityManager;
 
     @Transactional
