@@ -9,6 +9,16 @@ public class AddressDTO {
     private String houseNo;
 
 
+    public AddressDTO() {
+    }
+
+    public AddressDTO(Address address) {
+        this.Id = address.getId();
+        this.city = address.getCity();
+        this.street = address.getStreet();
+        this.houseNo = address.getHouseNo();
+    }
+
     public Long getId() {
         return Id;
     }
@@ -37,5 +47,10 @@ public class AddressDTO {
 
     public void setHouseNo(String houseNo) {
         this.houseNo = houseNo;
+    }
+
+    @Override
+    public String toString() {
+        return city + '\'' + street + '\'' + houseNo + '\'';
     }
 }

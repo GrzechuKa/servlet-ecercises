@@ -12,5 +12,6 @@
 </head>
 <body>
         <p>User saved : <%= (request.getParameter("firstName") + " " + request.getParameter("lastName")) %></p>
+        <a href="users">Show users</a>
 </body>
 </html>

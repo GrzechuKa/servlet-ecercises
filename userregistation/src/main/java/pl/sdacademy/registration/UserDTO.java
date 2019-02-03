@@ -6,6 +6,15 @@ public class UserDTO {
     private String lastName;
     private AddressDTO addressDTO;
 
+    public UserDTO() {
+    }
+
+    public UserDTO(User user) {
+        this.id = user.getId();
+        this.firstName = user.getFirstName();
+        this.lastName = user.getLastName();
+        this.addressDTO = new AddressDTO(user.getAddress());
+    }
 
     public Long getId() {
         return id;
@@ -29,12 +38,13 @@ public class UserDTO {
         this.lastName = lastName;
     }
 
-
-    public AddressDTO getAddressDTO() {
+    public AddressDTO getAddress() {
         return addressDTO;
     }
 
-    public void setAddressDTO(AddressDTO addressDTO) {
+    public void setAddress(AddressDTO addressDTO) {
         this.addressDTO = addressDTO;
+
+
     }
 }

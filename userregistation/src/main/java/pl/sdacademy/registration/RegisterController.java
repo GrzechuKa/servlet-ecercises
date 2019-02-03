@@ -39,7 +39,7 @@ public class RegisterController extends HttpServlet {
         addressDTO.setStreet(street);
         addressDTO.setHouseNo(houseNo);
 
-        userDTO.setAddressDTO(addressDTO);
+        userDTO.setAddress(addressDTO);
 
         userService.saveUser(userDTO);
 
