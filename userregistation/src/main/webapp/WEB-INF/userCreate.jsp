@@ -17,16 +17,16 @@
         <input type="text" id="firstName" name="firstName">
         </br>
         <label for="lastName">Last Name: </label>
-        <input type="text" id="lastName" name="firstName">
+        <input type="text" id="lastName" name="lastName">
         </br>
         <label for="city">City: </label>
-        <input type="text" id="city" name="firstName">
+        <input type="text" id="city" name="city">
         </br>
         <label for="street">Street: </label>
-        <input type="text" id="street" name="firstName">
+        <input type="text" id="street" name="street">
         </br>
         <label for="houseNo">House No: </label>
-        <input type="text" id="houseNo" name="firstName">
+        <input type="text" id="houseNo" name="houseNo">
         </br>
         <input type="submit" value="Register">
 

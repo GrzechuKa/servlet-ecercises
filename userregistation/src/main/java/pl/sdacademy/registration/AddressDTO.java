@@ -13,10 +13,6 @@ public class AddressDTO {
         return Id;
     }
 
-    public void setId(Long id) {
-        Id = id;
-    }
-
 
     public String getCity() {
         return city;

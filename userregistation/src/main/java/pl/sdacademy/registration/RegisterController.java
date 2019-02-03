@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 @WebServlet(name = "RegisterController", value = "/newUser")
 public class RegisterController extends HttpServlet {
@@ -23,6 +24,26 @@ public class RegisterController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        String firstName = request.getParameter("firstName");
+        String lastName = request.getParameter("lastName");
+        String city = request.getParameter("city");
+        String street = request.getParameter("street");
+        String houseNo = request.getParameter("houseNo");
+
+        UserDTO userDTO = new UserDTO();
+        userDTO.setFirstName(firstName);
+        userDTO.setLastName(lastName);
+
+        AddressDTO addressDTO = new AddressDTO();
+        addressDTO.setCity(city);
+        addressDTO.setStreet(street);
+        addressDTO.setHouseNo(houseNo);
+
+        userDTO.setAddressDTO(addressDTO);
+
+        userService.saveUser(userDTO);
+
+        request.getRequestDispatcher("WEB-INF/userSaved.jsp").forward(request, response);
     }
 
 }
