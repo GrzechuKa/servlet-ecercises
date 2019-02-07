@@ -7,10 +7,12 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
+
 <head>
     <title>User saved</title>
 </head>
 <body>
+<%@include file="header.html"%>
         <p>User saved : <%= (request.getParameter("firstName") + " " + request.getParameter("lastName")) %></p>
         <a href="users">Show users</a>
 </body>

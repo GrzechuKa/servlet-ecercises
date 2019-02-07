@@ -7,7 +7,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
 
 @WebServlet(name = "RegisterController", value = "/newUser")
 public class RegisterController extends HttpServlet {
@@ -18,6 +17,7 @@ public class RegisterController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        request.setAttribute("user", new UserDTO());
         request.getRequestDispatcher("WEB-INF/userCreate.jsp").forward(request, response);
     }
 

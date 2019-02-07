@@ -1,4 +1,4 @@
-<%--
+<%@ page import="pl.sdacademy.registration.UserDTO" %><%--
   Created by IntelliJ IDEA.
   User: MGK
   Date: 2019-02-02
@@ -11,10 +11,11 @@
     <title>User register</title>
 </head>
 <body>
-
-<form method="post">
+//dopisac uaktualnianie danych usera
+<% UserDTO user = (UserDTO) request.getAttribute("userProfile"); %>
+        <form method="post">
         <label for="firstName">First Name: </label>
-        <input type="text" id="firstName" name="firstName">
+        <input type="text" id="firstName" name="firstName" value="<%=user.getFirstName()%>">
         </br>
         <label for="lastName">Last Name: </label>
         <input type="text" id="lastName" name="lastName">

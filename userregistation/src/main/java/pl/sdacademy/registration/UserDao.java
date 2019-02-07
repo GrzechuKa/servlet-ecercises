@@ -23,4 +23,8 @@ public class UserDao {
         return query.getResultList();
     }
 
+    User fingById(Long userId){
+        return entityManager.find(User.class, userId);
+    }
+
 }

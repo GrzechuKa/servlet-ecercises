@@ -18,12 +18,17 @@
     <th>First name</th>
     <th>Last name</th>
     <th>Address</th>
+    <th>Show user</th>
+    <th>Edit user</th>
+
 </tr>
    <% for (UserDTO user : (Collection<UserDTO>) request.getAttribute("userCollection")) {%>
         <tr>
-        <th><%= user.getFirstName()%></th>
+        <th><%=user.getFirstName()%></th>
         <th><%=user.getLastName()%></th>
         <th><%=user.getAddress()%></th>
+        <th><a href="userProfile?userId=<%=user.getId()%>" >Show user</a></th>
+        <th><a href="userProfileEdit?userId=<%=user.getId()%>" >Edit user</a></th>
     </tr>
     <%} %>
 </table>
